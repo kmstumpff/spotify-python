@@ -34,6 +34,8 @@ class Query:
     def get_album(self, numb):
         if self.media_type == 1:
             return self.json[numb]['name']
+        elif self.media_type == 2:
+            return "No album available when searching artist"
         else:
             temp = self.json[numb]['album']
             return temp['name']

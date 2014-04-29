@@ -4,7 +4,7 @@ global sQuery
 sQuery = spotify.Query()
 
 global menu
-menu = "Song Search Menu:\n1. Open a link to a song\n2. Search again\n3. Quit\n\nEnter choice: "
+menu = "Song Search Menu:\n1. Open a link\n2. Search again\n3. Quit\n\nEnter choice: "
 
 
 #####################################
