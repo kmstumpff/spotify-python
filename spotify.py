@@ -1,14 +1,12 @@
 import urllib2
 import json
 
-
 class Query:
     def __init__(self):
         self.metadata = []
         self.json = []
         self.length = 0
         self.num_results = 0
-        self.api_key = ''  # fill in with your key
         self.api_url = 'http://ws.spotify.com/search/1/'
         self.media_type = 0
         self.api_media = 'album'
@@ -44,8 +42,8 @@ class Query:
         return self.json[numb]['href']
 
     def api_call(self, query, s_type):
-        print("query: " + query)
-        print("s_type: " + str(s_type))
+        #print("query: " + query)
+        #print("s_type: " + str(s_type))
         self.media_type = s_type
         if s_type == 1:
             self.api_media = "albums"
@@ -67,7 +65,7 @@ class Query:
             self.json = response['tracks']
         else:
             print("Error: API call failed...")
-        print("request: " + req)
+        #print("request: " + req)
         self.length = len(self.json)
         self.num_results = self.metadata['num_results']
 

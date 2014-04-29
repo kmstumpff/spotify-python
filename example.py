@@ -16,6 +16,8 @@ menu = "Song Search Menu:\n1. Open a link to a song\n2. Search again\n3. Quit\n\
 #
 # Returns:      None
 #
+# TODO: Add more metadata information to display
+#
 #####################################
 def disp_meta():
     if sQuery.num_results > 0:
@@ -43,7 +45,7 @@ def open_link():
         elif sys.platform[:3] == "win":
             os.system("start " + sQuery.get_url(choice - 1))
         elif sys.platform[:5] == "linux":
-            os.system("firefox " + sQuery.get_url(choice - 1))
+            os.system("spotify " + sQuery.get_url(choice - 1))
         else:
             print("Unsupported platform: Cannot open URL...")
     else:
@@ -128,7 +130,7 @@ def program():
             print("No match found!")
         else:
             while True:
-                limit = int(raw_input(str(sQuery.length) + " matches found. How many would you like to display? "))
+                limit = int(raw_input(str(sQuery.length) + " matches returned. How many would you like to display? "))
                 if check_range(limit, 1, sQuery.length):
                     break
                 else:
